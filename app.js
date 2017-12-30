@@ -283,3 +283,9 @@ function showCharttwo (){
     }
   });
 };
+
+/*function to change objects-2-string-back-2-objects*/
+function save(){
+  localStorage.list =
+JSON.stringify(allPictureObjects);
+}

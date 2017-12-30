@@ -3,7 +3,7 @@ body {
 	max-width: auto;
 
   color: black;
-  font-family: 'Open Sans', sans-serif;
+  font-family: sans-serif, /*'Open Sans',*/;
 }
 
 .pics {
@@ -14,6 +14,25 @@ body {
 	outline-style: solid;
   outline-color: white;
 }
+
   .pics:last-child {
     margin-right: 0px;
+}
+
+.canvas1 {
+  width: 200px;
+  height: 300px;
+  float: left;
+}
+
+.canvas2 {
+  width: 200px;
+  height: 300px;
+  float: left;
+}
+
+footer {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 11px;
 }
