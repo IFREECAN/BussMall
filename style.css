@@ -1,20 +1,9 @@
-* STRUCTURE */
 
 body {
 	max-width: auto;
-	margin: 0px auto;
-  background-color: orange;
+
+  color: black;
   font-family: 'Open Sans', sans-serif;
-  color: white;
-}
-header {
-	text-align: center;
-  color: white;
-}
-
-main {
-  margin-top: 100px;
-
 }
 
 .pics {
@@ -28,23 +17,3 @@ main {
   .pics:last-child {
     margin-right: 0px;
 }
-
-.canvas1 {
-	width: 200px;
-	heigth: 300px;
-	float:left;
-	}
-
-	.canvas2 {
-		float:left;
-		width: 200;
-		heigth: 300;
-
-		}
-
-  footer {
-   padding: 20px;
-   height: 20px;
-   text-align: center;
-   font-family: sans-serif;
- }
