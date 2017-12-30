@@ -136,10 +136,27 @@ function numberOfTimesClickedOut(){
 };
 numberOfTimesClickedOut();
 
-
 var collectData = function() {
   for (var i = 0; i < allPictureObjects.length; i++) {
     numberOfTimesShown.push(allPictureObjects[i].numShown);
     numberOfTimesClicked.push(allPictureObjects[i].numClicks);
   };
 };
+
+function showChart(){
+  console.log('INSIDE CHART', numberOfTimesClicked);
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['bag', 'banana', 'bathroom', 'boots','breakfast','bubblegum','chair', 'cthulhu','dog-duck','dragon','pen','pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun','unicorn','usb','water-can','wine-glass'],
+      datasets: [{
+        label: ['Times clicked'],
+        data: numberOfTimesClicked,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba()'
+        ]
+      ]
+    }
+  })
+}
