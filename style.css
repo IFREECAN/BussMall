@@ -1,0 +1,50 @@
+* STRUCTURE */
+
+body {
+	max-width: auto;
+	margin: 0px auto;
+  background-color: orange;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+header {
+	text-align: center;
+  color: white;
+}
+
+main {
+  margin-top: 100px;
+
+}
+
+.pics {
+  float:center;
+  width: 150px;
+  heiht: 150px;
+  margin-right:30px;
+	outline-style: solid;
+  outline-color: white;
+}
+  .pics:last-child {
+    margin-right: 0px;
+}
+
+.canvas1 {
+	width: 200px;
+	heigth: 300px;
+	float:left;
+	}
+
+	.canvas2 {
+		float:left;
+		width: 200;
+		heigth: 300;
+
+		}
+
+  footer {
+   padding: 20px;
+   height: 20px;
+   text-align: center;
+   font-family: sans-serif;
+ }
