@@ -1,19 +1,50 @@
 
 body {
-	max-width: auto;
-
+	width: 960px;
   color: black;
-  font-family: 'Open Sans', sans-serif;
+	background-color: orange;
+  font-family: sans-serif, /*'Open Sans',*/;
+	margin: 0px auto;
 }
+
+header {
+	text-align: center;
+	color: black;
+}
+
+main {
+	margin-top: 100px;
+}
+
 
 .pics {
-  float:center;
-  width: 150px;
-  heiht: 150px;
-  margin-right:30px;
+  float: left;
+  width: 250px;
+	height: 250px;
+  margin-right: 30px;
 	outline-style: solid;
-  outline-color: white;
+  outline-color: black;
 }
+
   .pics:last-child {
     margin-right: 0px;
+}
+
+
+.canvas1 {
+  width: 200px;
+  height: 300px;
+  float: left;
+}
+
+.canvas2 {
+  width: 200px;
+  height: 300px;
+  float: left;
+}
+
+/*footer {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 11px;
 }
