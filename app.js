@@ -2,7 +2,7 @@
 
 // Array of all images
 
-var allImages = ['bag.jpg', 'bananajpg', 'bathroom.jpg', 'boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg','dog-duck.jpg','dragon.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg','sweep.png','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg'];
+var allImages = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg','dog-duck.jpg','dragon.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg','sweep.png','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg'];
 
 //var allImages = ['bag.jpg','banana.jpg','bathroom.jpg','boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg','dog-duck.jpg','dragon.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg','sweep.png','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg'];
 // Array of all the objects stored with data
@@ -150,7 +150,7 @@ var collectData = function() {
 };
 
 //ceate the chart //
-function showChart(){
+function showMyChart(){
   console.log('INSIDE CHART', numberOfTimesClicked);
   new Chart(ctx, {
     type: 'bar',
@@ -223,7 +223,7 @@ function showChart(){
 };
 
 /*second chart function*/
-function showCharttwo (){
+function showMyCharttwo (){
   console.log('INSIDE CHART', numberOfTimesShown);
   new Chart(ctx, {
     type: 'bar',
