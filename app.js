@@ -2,12 +2,13 @@
 
 // Array of all images
 
-var allImages = ['bag', 'banana', 'bathroom', 'boots','breakfast','bubblegum','chair','cthulhu','dog-duck','dragon','dragon','pen','pet-sweep','scissors','shark','sweep','tauntaun','unicorn','usb','water-can','wine-glass'];
+var allImages = ['bag.jpg', 'bananajpg', 'bathroom.jpg', 'boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg','dog-duck.jpg','dragon.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg','sweep.png','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg'];
 
 //var allImages = ['bag.jpg','banana.jpg','bathroom.jpg','boots.jpg','breakfast.jpg','bubblegum.jpg','chair.jpg','cthulhu.jpg','dog-duck.jpg','dragon.jpg','dragon.jpg','pen.jpg','pet-sweep.jpg','scissors.jpg','shark.jpg','sweep.png','tauntaun.jpg','unicorn.jpg','usb.gif','water-can.jpg','wine-glass.jpg'];
 // Array of all the objects stored with data
 var allPictureObjects = [];
 
+//to load data to my chart//
 var list = [];
 if (localStorage.list) {
   list = JSON.parse(localStorage.list);
@@ -15,10 +16,8 @@ if (localStorage.list) {
   list = [];
 }
 console.log(list);
-//stuff.allImages = [];
-// need to figure out how to get name and filepath from allImages above.
-// how do I tie allImages to the functions below.
 
+// Constructor function //
 function ImagesConstructor(filepath){
   this.name = filepath.split('.')[0];
   this.filepath = 'img/' + filepath;
@@ -26,6 +25,7 @@ function ImagesConstructor(filepath){
   this.numShown = 0;
   allPictureObjects.push(this);
 }
+
 
 var createPicturesArray = function(){
   for(var i = 0; i < allImages.length; i++){
@@ -41,11 +41,13 @@ createPicturesArray();
 var placeOne = document.getElementById('placeOne');
 var placeTwo = document.getElementById('placeTwo');
 var placeThree = document.getElementById('placeThree');
+
+//numer of times shown and nunber of times clicked charts//
 var ctx = document.getElementById ('chart1','chart2').getContext('2d');
 
 var randOne, randTwo, randThree;
 
-// Shows the images on the page
+// Shows the images on the page function//
 var showImages = function(){
   // Random number between 0-20 for placeOne
   randOne = Math.floor(Math.random() * allImages.length);
@@ -74,7 +76,6 @@ var showImages = function(){
 showImages();
 
 var counter = 0;
-
 // Event Listeners when images are clicked
 placeOne.addEventListener('click', function(){
   allPictureObjects[randOne].numClicks += 1;
@@ -116,8 +117,9 @@ placeThree.addEventListener('click', function(){
   allPictureObjects[randThree].numClicks += 1;
   counter += 1;
   if (counter >= 25) {
-    // Remove the images
+    // save data to the chart
     save();
+    //remove images from the chart//
     document.getElementById('imageHolder').remove();
     // Collect Data
     collectData();
@@ -131,6 +133,7 @@ placeThree.addEventListener('click', function(){
   showImages();
 });
 
+//create arries to call the data that goest into my chart//
 var numberOfTimesShown = [];
 var numberOfTimesClicked = [];
 
@@ -146,14 +149,16 @@ var collectData = function() {
   };
 };
 
+//ceate the chart //
 function showChart(){
   console.log('INSIDE CHART', numberOfTimesClicked);
   new Chart(ctx, {
     type: 'bar',
     data: {
+      //using stings here because the array-position matches the order of the data being used//
       labels: ['bag', 'banana', 'bathroom', 'boots','breakfast','bubblegum','chair', 'cthulhu','dog-duck','dragon','pen','pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun','unicorn','usb','water-can','wine-glass'],
       datasets: [{
-        label: ['Times clicked'],
+        label: ['Times Clicked'],
         data: numberOfTimesClicked,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
@@ -202,6 +207,7 @@ function showChart(){
         borderWidth: 1
       }]
     },
+    //contorls the size of the chart per "Canvas"//
     maintainAspectRatio: true,
     options: {
       responsive: true,
@@ -225,7 +231,7 @@ function showCharttwo (){
       labels: ['bag', 'banana', 'bathroom', 'boots','breakfast','bubblegum','chair', 'cthulhu','dog-duck','dragon','pen','pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun','unicorn','usb','water-can','wine-glass'],
       datasets: [{
         label: ['Times clicked'],
-        data: numberOfTimesClicked,
+        data: numberOfTimesShown,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
