@@ -108,7 +108,7 @@ placeTwo.addEventListener('click', function(){
     console.log('numberOfTimesClicked :: ', numberOfTimesClicked);
     // Show chart
     showMyChart();
-    showMyCharttwo ();
+    showMyCharttwo();
   }
   showImages();
 });
@@ -128,7 +128,7 @@ placeThree.addEventListener('click', function(){
     // Show chart
     document.getElementById('chart');
     showMyChart();
-    showMyCharttwo ();
+    showMyCharttwo();
   }
   showImages();
 });
@@ -150,7 +150,7 @@ var collectData = function() {
 };
 
 //ceate the chart //
-function showMyChart(){
+function showMyChart (){
   console.log('INSIDE CHART', numberOfTimesClicked);
   new Chart(ctx, {
     type: 'bar',
