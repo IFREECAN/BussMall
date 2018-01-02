@@ -43,7 +43,7 @@ var placeTwo = document.getElementById('placeTwo');
 var placeThree = document.getElementById('placeThree');
 
 //numer of times shown and nunber of times clicked charts//
-var ctx = document.getElementById ('chart1','chart2').getContext('2d');
+var ctx = document.getElementById('chart1').getContext('2d');
 
 var randOne, randTwo, randThree;
 
@@ -90,7 +90,7 @@ placeOne.addEventListener('click', function(){
     console.log('numberOfTimesClicked :: ', numberOfTimesClicked);
     // Show chart
     showMyChart();
-    showMyCharttwo ();
+    // showMyCharttwo ();
   }
   showImages();
 });
@@ -108,7 +108,7 @@ placeTwo.addEventListener('click', function(){
     console.log('numberOfTimesClicked :: ', numberOfTimesClicked);
     // Show chart
     showMyChart();
-    showMyCharttwo();
+    // showMyCharttwo();
   }
   showImages();
 });
@@ -128,7 +128,7 @@ placeThree.addEventListener('click', function(){
     // Show chart
     document.getElementById('chart');
     showMyChart();
-    showMyCharttwo();
+    // showMyCharttwo();
   }
   showImages();
 });
@@ -156,11 +156,14 @@ function showMyChart (){
     type: 'bar',
     data: {
       //using stings here because the array-position matches the order of the data being used//
+      //labels: ['test1', 'test2', 'test3', 'test4'],
       labels: ['bag', 'banana', 'bathroom', 'boots','breakfast','bubblegum','chair', 'cthulhu','dog-duck','dragon','pen','pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun','unicorn','usb','water-can','wine-glass'],
       datasets: [{
         label: ['Times Clicked'],
-        data: numberOfTimesClicked,
-        backgroundColor: [
+        //data: [20, 15, 30, 70],
+
+         data: numberOfTimesClicked,
+  /*      backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
@@ -204,11 +207,11 @@ function showMyChart (){
           'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
         ],
-        borderWidth: 1
+        borderWidth: 1 */
       }]
     },
-    //contorls the size of the chart per "Canvas"//
-    maintainAspectRatio: true,
+  /*  //contorls the size of the chart per "Canvas"//
+   maintainAspectRatio: true,
     options: {
       responsive: true,
       scale: {
@@ -219,6 +222,7 @@ function showMyChart (){
         }]
       }
     }
+  */
   });
 };
 
